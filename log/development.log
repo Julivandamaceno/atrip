@@ -807,10 +807,6 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 00:16:05
 Served asset /application.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/vendor/zepto.min.js" for 127.0.0.1 at 2013-04-04 00:16:05 -0300
-Served asset /vendor/zepto.min.js - 304 Not Modified (0ms)
-=======
-=======
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
   [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
@@ -850,3 +846,39 @@ Migrating to CreateCountries (20130404024544)
   [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("countries")[0m
 >>>>>>> Stashed changes
 >>>>>>> 8c6e7eafbac0bbd10a0d47b07bf67680bef3929c
+=======
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-04 00:17:01 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-04 00:17:01 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/print.css?body=1" for 127.0.0.1 at 2013-04-04 00:17:01 -0300
+Served asset /print.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2013-04-04 00:17:01 -0300
+Served asset /screen.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-04 00:17:01 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ie.css?body=1" for 127.0.0.1 at 2013-04-04 00:17:01 -0300
+Served asset /ie.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2013-04-04 00:17:01 -0300
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/vendor/zepto.min.js" for 127.0.0.1 at 2013-04-04 00:17:01 -0300
+Served asset /vendor/zepto.min.js - 304 Not Modified (0ms)
+>>>>>>> Stashed changes
