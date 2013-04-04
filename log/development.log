@@ -1,10 +1,4 @@
 
-
-Started GET "/assets/rails.png" for 127.0.0.1 at 2013-04-03 16:41:02 -0300
-Connecting to database specified by database.yml
-Served asset /rails.png - 200 OK (8ms)
-
-
 Started GET "/assets/rails.png" for 127.0.0.1 at 2013-04-03 23:29:37 -0300
 Served asset /rails.png - 200 OK (30ms)
 
@@ -520,13 +514,6 @@ ActionController::RoutingError (No route matches [GET] "/vendor/modernizr-2.6.2.
 Started GET "/assets/vendor/modernizr-2.6.2.min.js?body=1" for 127.0.0.1 at 2013-04-04 00:08:21 -0300
 Served asset /vendor/modernizr-2.6.2.min.js - 200 OK (2ms)
 
-
-Started GET "/" for 127.0.0.1 at 2013-04-04 00:08:37 -0300
-Processing by HomeController#index as HTML
-  Rendered home/index.html.erb within layouts/application (0.1ms)
-Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.0ms)
-
-
 Started GET "/" for 127.0.0.1 at 2013-04-04 00:10:22 -0300
 Processing by HomeController#index as HTML
   Rendered home/index.html.erb within layouts/application (0.1ms)
@@ -822,3 +809,44 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/vendor/zepto.min.js" for 127.0.0.1 at 2013-04-04 00:16:05 -0300
 Served asset /vendor/zepto.min.js - 304 Not Modified (0ms)
+=======
+=======
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCountries (20130404024544)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "display_name" varchar(255) NOT NULL, "active" boolean DEFAULT 'f', "abbreviation" varchar(2) NOT NULL, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130404024544')
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("countries")
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateCountries (20130404024544)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "countries"[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20130404024544'
+  [1m[36m (4.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCountries (20130404024544)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) NOT NULL, "display_name" varchar(255) NOT NULL, "active" boolean DEFAULT 'f', "abbreviation" varchar(2) NOT NULL, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130404024544')[0m
+  [1m[35m (5.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("countries")[0m
+>>>>>>> Stashed changes
+>>>>>>> 8c6e7eafbac0bbd10a0d47b07bf67680bef3929c
