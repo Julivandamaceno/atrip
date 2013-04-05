@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CreateCountries < ActiveRecord::Migration
   def change
     create_table :countries do |t|
@@ -10,7 +11,7 @@ class CreateCountries < ActiveRecord::Migration
       t.timestamps
     end
     add_index :countries, :name, :unique => true
-    
+
     Country.new(display_name:"Brasil", active:true, abbreviation:"br").save
   end
 end

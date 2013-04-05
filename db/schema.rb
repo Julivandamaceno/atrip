@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130405020313) do
+ActiveRecord::Schema.define(:version => 20130405024939) do
+
+  create_table "cities", :force => true do |t|
+    t.string   "name",                            :null => false
+    t.string   "display_name",                    :null => false
+    t.boolean  "active",       :default => false, :null => false
+    t.string   "description"
+    t.integer  "estate_id",                       :null => false
+    t.integer  "lat"
+    t.integer  "long"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "cities", ["name", "estate_id"], :name => "index_cities_on_name_and_estate_id", :unique => true
 
   create_table "countries", :force => true do |t|
     t.string   "name",                                         :null => false
