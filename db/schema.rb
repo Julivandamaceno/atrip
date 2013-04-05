@@ -11,27 +11,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130404031645) do
+ActiveRecord::Schema.define(:version => 20130405020313) do
 
   create_table "countries", :force => true do |t|
     t.string   "name",                                         :null => false
     t.string   "display_name",                                 :null => false
-    t.boolean  "active",                    :default => false
+    t.boolean  "active",                    :default => false, :null => false
     t.string   "abbreviation", :limit => 2,                    :null => false
     t.string   "description"
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
   end
 
-  create_table "regions", :force => true do |t|
+  add_index "countries", ["name"], :name => "index_countries_on_name", :unique => true
+
+  create_table "estates", :force => true do |t|
     t.string   "name",                                         :null => false
     t.string   "display_name",                                 :null => false
-    t.boolean  "active",                    :default => false
+    t.boolean  "active",                    :default => false, :null => false
     t.string   "abbreviation", :limit => 2,                    :null => false
     t.string   "description"
-    t.integer  "country_id"
+    t.integer  "region_id",                                    :null => false
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
   end
+
+  add_index "estates", ["name"], :name => "index_estates_on_name", :unique => true
+
+  create_table "regions", :force => true do |t|
+    t.string   "name",                                         :null => false
+    t.string   "display_name",                                 :null => false
+    t.boolean  "active",                    :default => false, :null => false
+    t.string   "abbreviation", :limit => 2,                    :null => false
+    t.string   "description"
+    t.integer  "country_id",                                   :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+  end
+
+  add_index "regions", ["name"], :name => "index_regions_on_name", :unique => true
 
 end
