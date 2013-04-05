@@ -31,7 +31,6 @@ $icons-sprite-base-class: ".main-icons";
 			}
 		}
 
-
 		a { 
 			@include single-transition(color, 0.2s, linear);
 			color: #fff;
@@ -43,6 +42,35 @@ $icons-sprite-base-class: ".main-icons";
 				color: $base-color-light-hover;
 			}
 		}
+	}
+
+	.logo {
+		display: block;
+		width: 171px;
+		height: 68px;
+		float: left;
+	}
+
+	.search-form {
+		width: 545px;
+		float: left;
+	}
+
+	.social {
+		float: left;
+			
+		li { float: left; }
+		
+		a {
+			display: block;
+			width: 39px;
+			height: 37px;
+			text-indent: -9999px;
+		}
+		
+		.icons-facebook-inactive:hover { @extend .icons-facebook-active; }
+		.icons-twitter-inactive:hover { @extend .icons-twitter-active; }
+		.icons-rss-inactive:hover { @extend .icons-rss-active; }
 	}
 
 }
