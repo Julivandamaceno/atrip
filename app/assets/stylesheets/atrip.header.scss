@@ -3,10 +3,18 @@
 	.top-navigation {
 		background: #000;
 		text-transform: uppercase;
+		padding: 14px 0;
+
+		li {
+			float: left;
+			margin-right: 20px;
+		}
 
 		a { 
 			color: #fff;
 			text-decoration: none;
+			font-weight: bold;
+			font-size: 11px;
 		}
 	}
 

@@ -5,7 +5,26 @@
 
 @import "compass/reset";
 
+body {
+	font-family: 'Arial';
+}
+
 .wrapper {
 	margin: 0 auto;
 	width: 1020px;
+}
+
+.line{
+	*zoom:1;
+
+	&:after {
+		clear: both;
+		display: block;
+		visibility: hidden;
+		overflow: hidden;
+		height: 0 !important;
+		line-height: 0;
+		font-size: xx-large;
+		content: ' x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ';
+	}
 }
