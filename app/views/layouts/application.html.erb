@@ -11,9 +11,14 @@
         <meta name="viewport" content="width=device-width">
         <%= javascript_include_tag "vendor/modernizr-2.6.2.min" %>
         <%= stylesheet_link_tag    "application", :media => "all" %>
+        <!--[if IE]>
+            <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <![endif]-->
   		<%= csrf_meta_tags %>
     </head>
     <body>
+        <%= render "/layouts/header" %>
+        
         <%= yield %>
 
         <script>document.write('<script src=' + ('__proto__' in {} ? '/assets/vendor/zepto.min' : '/assets/vendor/jquery-1.9.1.min') +'.js><\/script>');</script>
