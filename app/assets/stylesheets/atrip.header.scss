@@ -1,9 +1,18 @@
+@import "colors.scss";
+
+@import "icons/*.png";
+@include all-icons-sprites;
+
 .atrip-header {
 
 	.top-navigation {
-		background: #000;
+		background: $base-color;
 		text-transform: uppercase;
 		padding: 14px 0;
+
+		.main { float: left; }
+
+		.user-login { float: right; }
 
 		li {
 			float: left;
