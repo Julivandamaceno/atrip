@@ -1,5 +1,8 @@
 @import "colors.scss";
+@import "compass/css3";
 
+$icons-spacing: 20px;
+$icons-sprite-base-class: ".main-icons";
 @import "icons/*.png";
 @include all-icons-sprites;
 
@@ -10,20 +13,35 @@
 		text-transform: uppercase;
 		padding: 14px 0;
 
-		.main { float: left; }
+		.main { float: left; padding: 3px 2px 0 50px; }
 
-		.user-login { float: right; }
+		li { float: left; margin-right: 20px; }
 
-		li {
-			float: left;
-			margin-right: 20px;
+		.user-login { 
+			float: right;
+			padding: 0 0 2px 32px;
+
+			li {
+				margin-right: 15px;
+
+				&:nth-child(1) {
+					border-right: 1px solid #fff;
+					padding-right: 15px;
+				}
+			}
 		}
 
+
 		a { 
+			@include single-transition(color, 0.2s, linear);
 			color: #fff;
 			text-decoration: none;
 			font-weight: bold;
 			font-size: 11px;
+
+			&:hover {
+				color: $base-color-light-hover;
+			}
 		}
 	}
 
