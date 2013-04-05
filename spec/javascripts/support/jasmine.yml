@@ -11,8 +11,9 @@
 #   - dist/**/*.js
 #
 src_files:
-  - public/javascripts/application.js
-  - public/javascripts/**/*.js
+  - app/assets/javascripts/vendor/zepto.min.js
+  - app/assets/javascripts/application.js
+# - assets/javascripts/**/*.js
 
 # stylesheets
 #
