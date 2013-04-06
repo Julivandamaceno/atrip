@@ -58,6 +58,9 @@ Atrip::Application.routes.draw do
 
   root :to => "home#index"
 
-  get "/:name", :to => "place#show_country"
+  get "/:country", :to => "place#show_country"
+  get "/:country/:region", :to => "place#show_region"
+  get "/:country/:region/:estate", :to => "place#show_estate"
+  get "/:country/:region/:estate/:city", :to => "place#show_city"
 
 end
