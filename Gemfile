@@ -21,11 +21,16 @@ end
 
 group :test, :development do
    gem 'jasmine', '1.1.2'
-   gem "rspec", '2.6.0'
-   gem "rspec-rails", "~> 2.4"
+   gem "rspec", '2.10.0'
+   gem "rspec-rails", '2.10.1'
+   gem 'factory_girl_rails', '4.2.1'
+   gem 'faker', '1.1.2'
+   gem 'capybara', '2.0.3'
+   gem 'guard-rspec', '1.2.1'
+   gem 'launchy', '2.2.0'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.0.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

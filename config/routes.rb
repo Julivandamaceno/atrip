@@ -57,4 +57,7 @@ Atrip::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   root :to => "home#index"
+
+  get "/:name", :to => "place#show_country"
+
 end
