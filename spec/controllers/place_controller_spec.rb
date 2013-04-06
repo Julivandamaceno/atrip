@@ -2,56 +2,56 @@ require 'spec_helper'
 
 describe PlaceController do
 
+	not_found = "nao_encontrado"
 	country = FactoryGirl.build(:brasil)
 	region = FactoryGirl.build(:sudeste)
 	estate = FactoryGirl.build(:sao_paulo)
 	city = FactoryGirl.build(:ilha_bela)
 
-	describe "country" do
+	describe "show" do
 
-		it "assigns @country" do
-			Country.should_receive(:find_by_name).with(country.name).and_return(country)
+		params = {}
+
+		[country, region, estate, city].each do |obj|
+
+			method = "show_#{param}".to_sym
+			param = obj.class.to_s.underscore.to_sym
+
+			it "assigns place to view" do
+				params[param] = obj.name
+				obj.class.should_receive(:find_by_name).with(obj.name).and_return(obj)
 			
-      		get :show_country, country: country.name
+	      		get method, params
 
-			assigns(:country).should eq(country)
+				assigns(param).should eq(obj)
+			end
+
+			it "render 404 when not found" do
+				params[param] = not_found
+				obj.class.should_receive(:find_by_name).with(not_found).and_return(nil)
+
+	      		get method, params
+
+				response.response_code.should == 404
+				response.should render_template(:file => "#{Rails.root}	/public/404.html")
+			end
 		end
+
+	end
+
+	describe "country" do
 
 	end
 
 	describe "region" do
 
-		it "assigns @region" do
-			Region.should_receive(:find_by_name).with(region.name).and_return(region)
-			
-      		get :show_region, country: country.name, region: region.name
-
-			assigns(:region).should eq(region)
-		end
-
 	end
 
 	describe "estate" do
 
-		it "assigns @estate" do
-			Estate.should_receive(:find_by_name).with(estate.name).and_return(estate)
-			
-      		get :show_estate, country: country.name, region: region.name, estate: estate.name
-
-			assigns(:estate).should eq(estate)
-		end
-
 	end
 
 	describe "city" do
-
-		it "assigns @city" do
-			City.should_receive(:find_by_name).with(city.name).and_return(city)
-			
-      		get :show_city, country: country.name, region: region.name, estate: estate.name, city: city.name
-
-			assigns(:city).should eq(city)
-		end
 
 	end
 

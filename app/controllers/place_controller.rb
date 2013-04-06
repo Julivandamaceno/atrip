@@ -2,28 +2,32 @@ class PlaceController < ApplicationController
 
 	def show_country
 		@country = Country.find_by_name(params[:country])
-		http_header_cache(@country)
+		respond_using(@country)
 	end
 
 	def show_region
 		@region = Region.find_by_name(params[:region])
-		http_header_cache(@region)
+		respond_using(@region)
 	end
 
 	def show_estate
 		@estate = Estate.find_by_name(params[:estate])
-		http_header_cache(@estate)
+		respond_using(@estate)
 	end
 
 	def show_city
 		@city = City.find_by_name(params[:city])
-		http_header_cache(@city)
+		respond_using(@city)
 	end
 
 	private
 
-	def http_header_cache(obj)
-		fresh_when :last_modified => obj.updated_at.utc, :etag => obj
+	def respond_using(obj)
+		if obj
+			fresh_when :last_modified => obj.updated_at.utc, :etag => obj
+		else
+			render(file: "#{Rails.root}/public/404.html", status: 404)
+		end
 	end
 
 end
