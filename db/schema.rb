@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20130405024939) do
     t.string   "name",                            :null => false
     t.string   "display_name",                    :null => false
     t.boolean  "active",       :default => false, :null => false
-    t.string   "description"
+    t.text     "description"
     t.integer  "estate_id",                       :null => false
     t.integer  "lat"
     t.integer  "long"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20130405024939) do
     t.string   "display_name",                                 :null => false
     t.boolean  "active",                    :default => false, :null => false
     t.string   "abbreviation", :limit => 2,                    :null => false
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
   end
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20130405024939) do
     t.string   "display_name",                                 :null => false
     t.boolean  "active",                    :default => false, :null => false
     t.string   "abbreviation", :limit => 2,                    :null => false
-    t.string   "description"
+    t.text     "description"
     t.integer  "region_id",                                    :null => false
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20130405024939) do
     t.string   "display_name",                                 :null => false
     t.boolean  "active",                    :default => false, :null => false
     t.string   "abbreviation", :limit => 2,                    :null => false
-    t.string   "description"
+    t.text     "description"
     t.integer  "country_id",                                   :null => false
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false

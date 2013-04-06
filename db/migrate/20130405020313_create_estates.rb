@@ -6,7 +6,7 @@ class CreateEstates < ActiveRecord::Migration
       t.string :display_name, :null => false
       t.boolean :active, :null => false, :default => false
       t.string :abbreviation, :null => false, :limit => 2
-      t.string :description
+      t.text :description
       t.references :region, :null => false
 
       t.timestamps

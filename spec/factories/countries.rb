@@ -5,6 +5,7 @@ FactoryGirl.define do
 	  display_name 'Brasil'
 	  active true
 	  abbreviation 'br'
+	  updated_at Date.new
 	end
 
 	factory :eua, :class => Country do
@@ -12,6 +13,7 @@ FactoryGirl.define do
 	  display_name 'Estados Unidos'
 	  active false
 	  abbreviation 'eua'
+	  updated_at Date.new
 	end
 
 end

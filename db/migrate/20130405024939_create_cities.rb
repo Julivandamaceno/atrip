@@ -5,7 +5,7 @@ class CreateCities < ActiveRecord::Migration
 	  t.string :name, :null => false
       t.string :display_name, :null => false
       t.boolean :active, :null => false, :default => false
-      t.string :description
+      t.text :description
       t.references :estate, :null => false
       t.integer :lat
       t.integer :long
