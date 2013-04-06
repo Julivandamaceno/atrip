@@ -6,6 +6,11 @@
 	float: left;
 	width: 100%;
 
+	.wrap-inner {
+		margin: 0 auto;
+		width: 928px;
+	}
+
 	.background-map {
 		background-position: center -210px;
 		background-repeat: no-repeat;
@@ -20,13 +25,47 @@
 	.main-content {
 		position: relative;
 		margin-top: 300px;
+		color: $text-color;
 
 		.highlight {
-			@include single-box-shadow($base-color, 0, 0, 10px, false);
-			border: 5px solid #fff;
-			width: 928px;
-			margin: 0 auto;
+
+			margin-bottom: 40px;
+
+			.main-image {
+				@include single-box-shadow($base-color, 0, 0, 10px, false);
+				border: 5px solid #fff;
+			}
+
+			.carousel {
+				margin-top: 20px;
+
+				a {
+					@include single-transition(all, 0.9s, ease);
+					@include single-box-shadow($base-color-light-hover, 0, 0, 4px, false);
+					float: left;
+					margin-right: 10px;
+					border: 5px solid #fff;
+					display: block;
+
+					&:hover { border-color: $base-color-light-hover; @include single-box-shadow($base-color, 0, 0, 10px, false) }
+				}
+			}
 		}
 
+		.place-info {
+			margin-top: 20px;
+
+			.title {
+				font-weight: bold;
+				font-size: 40px;
+				margin-bottom: 10px;
+			}
+
+			p {
+				margin: 20px 0;
+				font-size: 13px;
+				line-height: 18px;
+			}
+		}
 	}
 }
