@@ -6,4 +6,8 @@ class Region < ActiveRecord::Base
 
 	before_save { |obj| obj.name = obj.display_name.to_permalink }
 
+	def uri
+		country.uri + "/#{name}"
+	end
+
 end

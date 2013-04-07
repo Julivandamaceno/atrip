@@ -14,8 +14,8 @@ describe PlaceController do
 
 		[country, region, estate, city].each do |obj|
 
-			method = "show_#{param}".to_sym
 			param = obj.class.to_s.underscore.to_sym
+			method = "show_#{param}".to_sym
 
 			it "assigns place to view" do
 				params[param] = obj.name

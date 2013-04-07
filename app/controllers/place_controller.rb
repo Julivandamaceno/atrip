@@ -26,7 +26,7 @@ class PlaceController < ApplicationController
 		if obj
 			fresh_when :last_modified => obj.updated_at.utc, :etag => obj
 		else
-			render(file: "#{Rails.root}/public/404.html", status: 404)
+			render(file: "#{Rails.root}/public/404", status: 404, formats: [:html])
 		end
 	end
 
