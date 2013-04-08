@@ -6,4 +6,8 @@ class City < ActiveRecord::Base
 
 	before_save { |obj| obj.name = obj.display_name.to_permalink }
 
+	def uri
+		estate.uri + "/#{name}"
+	end
+
 end

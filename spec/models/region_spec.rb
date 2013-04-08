@@ -6,9 +6,13 @@ describe Region do
 	country = FactoryGirl.build(:brasil)
 
 	describe "uri" do 
-		region.country = country
 
-		region.uri.should == "/brasil/sudeste"
+		it "generates correct uri" do
+			region.country = country
+
+			region.uri.should == country.uri + "/sudeste"
+		end
+		
 	end
 
 end
