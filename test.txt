@@ -1,0 +1,10 @@
+- não iterar coleçoes pra depois chamar o render do item.
+
+- tags
+	http://railscasts.com/episodes/382-tagging?autoplay=true
+
+- detectar problema N + 1
+	http://railscasts.com/episodes/372-bullet?autoplay=true
+
+- profiler
+	http://railscasts.com/episodes/368-miniprofiler?view=comments

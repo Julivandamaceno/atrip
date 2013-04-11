@@ -1,7 +1,6 @@
 class PlaceController < ApplicationController
 
 	def show_country
-		p request.fullpath
 		@country = Country.find_by_name(params[:country])
 		respond_using(@country)
 	end
@@ -17,7 +16,6 @@ class PlaceController < ApplicationController
 	end
 
 	def show_city
-		p request.fullpath
 		@city = City.find_by_name(params[:city])
 		respond_using(@city)
 	end
