@@ -20,6 +20,13 @@ class PlaceController < ApplicationController
 		respond_using(@city)
 	end
 
+	def update_country
+		@country = Country.find(params[:id])
+		@country.pictures.build(params[:country])
+		@country.save
+		redirect_to @country.uri, status: 301
+	end
+
 	private
 
 	def respond_using(obj)

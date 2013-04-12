@@ -29,4 +29,15 @@
 			</div>
 		</section>
 	</div>
+
+	<%= form_for @country, :html => { :multipart => true } do |form| %>
+	  <%= form.file_field :image %>
+	  <%= form.submit 'Gravar' %>
+	<% end %>
+
+	<% @country.pictures.each do |picture| %>
+		<%= image_tag picture.image %>
+	<% end %>
+
+	<%= render @country.regions %>
 </div>

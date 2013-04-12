@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130405024939) do
+ActiveRecord::Schema.define(:version => 20130412023541) do
 
   create_table "cities", :force => true do |t|
     t.string   "name",                            :null => false
@@ -51,6 +51,18 @@ ActiveRecord::Schema.define(:version => 20130405024939) do
   end
 
   add_index "estates", ["name"], :name => "index_estates_on_name", :unique => true
+
+  create_table "pictures", :force => true do |t|
+    t.string   "name"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "regions", :force => true do |t|
     t.string   "name",                                         :null => false

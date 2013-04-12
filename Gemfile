@@ -6,6 +6,14 @@ gem 'sqlite3'
 
 gem 'permalink', '1.2.1'
 
+gem 'paperclip', '3.4.1'
+
+gem 'jquery-rails', '2.0.2'
+
+gem 'turbolinks', '1.1.1'
+
+gem 'rack-mini-profiler'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -29,12 +37,6 @@ group :test, :development do
    gem 'guard-rspec', '1.2.1'
    gem 'launchy', '2.2.0'
 end
-
-gem 'jquery-rails', '2.0.2'
-
-gem 'turbolinks', '1.1.1'
-
-gem 'rack-mini-profiler'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -63,4 +63,6 @@ Atrip::Application.routes.draw do
   get "/:country/:region/:estate", :to => "place#show_estate"
   get "/:country/:region/:estate/:city", :to => "place#show_city"
 
+  match 'countries/:id' => 'place#update_country', :as => :country
+
 end

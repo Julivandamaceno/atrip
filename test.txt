@@ -1,4 +1,4 @@
-- não iterar coleçoes pra depois chamar o render do item.
+- não iterar coleçoes pra depois chamar o render do item. - funciona mesmo!
 
 - tags
 	http://railscasts.com/episodes/382-tagging?autoplay=true
